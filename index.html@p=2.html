@@ -214,8 +214,33 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 				</div>
 				<div id="img-main" class="col-7 align-c">
-					<img class="major preload" src="wp-content/themes/dannaway/images/about-adham-dannaway.jpg" alt="adham dannaway ui designer">
+					<div class="face-container">
+						<img class="major preload face" src="wp-content/themes/dannaway/images/pranayanimated.jpg" alt="pranay bhatnagar software developer">
+						<div class="eye left-eye">
+							<div class="pupil"></div>
+						</div>
+						<div class="eye right-eye">
+							<div class="pupil"></div>
+						</div>
+					</div>
+					<script>
+						document.addEventListener('mousemove', (event) => {
+							const eyes = document.querySelectorAll('.eye');
+							eyes.forEach(eye => {
+								const rect = eye.getBoundingClientRect();
+								const eyeX = rect.left + rect.width / 2;
+								const eyeY = rect.top + rect.height / 2;
+								const deltaX = event.clientX - eyeX;
+								const deltaY = event.clientY - eyeY;
+								const angle = Math.atan2(deltaY, deltaX);
+								const pupil = eye.querySelector('.pupil');
+								const radius = (rect.width / 2) - (pupil.offsetWidth / 2);
+								pupil.style.transform = `translate(${radius * Math.cos(angle)}px, ${radius * Math.sin(angle)}px)`;
+							});
+						});
+					</script>
 				</div>
+				
 			</div>
 			<div id="snaps" class="row align-c snaps clearfix">
 
