@@ -227,7 +227,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 		</section>
 
-		<section id="content-detail" class="dark form">
+		<!-- <section id="content-detail" class="dark form">
 			<div class="row">
 				<div class="col-12">
 					<h2>Send me an email</h2>
@@ -247,6 +247,32 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 						<div class="wpcf7-response-output" aria-hidden="true"></div>
 					</form>
 					
+				</div>
+			</div>
+		</section> -->
+		<section id="content-detail" class="dark form">
+			<div class="row">
+				<div class="col-12">
+					<h2>Send me an email</h2>
+				</div>
+				<div class="col-6">
+					<form action="https://formserver-p3b7.onrender.com/submit" method="post">
+						<p>
+							Name:
+							<input type="text" name="your-name" required />
+						</p>
+						<p>
+							Email:
+							<input type="email" name="your-email" required />
+						</p>
+						<p>
+							Message:
+							<textarea name="your-message" rows="10" required></textarea>
+						</p>
+						<p>
+							<input type="submit" value="Send email" />
+						</p>
+					</form>
 				</div>
 			</div>
 		</section>
