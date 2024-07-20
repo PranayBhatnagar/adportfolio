@@ -886,6 +886,42 @@ img.major {
   width: 450px;
 }
 
+img.alignment {
+  margin-top: 4rem;
+  margin-bottom: 0;
+  height: 450px;
+  width: 600px;
+}
+
+img.featurealign {
+  margin-top: 3rem;
+  margin-bottom: 0;
+  height: 250px;
+  width: 500px;
+}
+
+
+img.bookalign {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  height: 300px;
+  width: 450px;
+}
+
+img.workspacealign {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  height: 300px;
+  width: 500px;
+}
+
+img.contactimage {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  height: 450px;
+  width: 600px;
+}
+
 img.shadow {
   border: #dddddd solid 1px;
 }
