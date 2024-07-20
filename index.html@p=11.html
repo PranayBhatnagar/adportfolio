@@ -310,12 +310,16 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 		
 				var formData = new FormData(this);
 		
-				fetch('https://<your-app-on-render>.onrender.com/submit', {
+				fetch('https://formserver-p3b7.onrender.com/submit', {
 					method: 'POST',
 					body: formData
 				})
-				.then(response => response.json())
+				.then(response => {
+					console.log('Response status:', response.status);
+					return response.json();
+				})
 				.then(data => {
+					console.log('Response data:', data);
 					if (data.status === 'success') {
 						document.getElementById('responseMessage').style.display = 'block';
 						document.getElementById('responseMessage').textContent = 'Your message has been sent!';
@@ -326,11 +330,14 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 					}
 				})
 				.catch(error => {
+					console.error('Error:', error);
 					document.getElementById('responseMessage').style.display = 'block';
 					document.getElementById('responseMessage').textContent = 'There was an error sending your message.';
 				});
 			});
 		</script>
+		
+		
 		
 
 	</div><!-- / content -->
