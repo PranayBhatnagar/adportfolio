@@ -250,7 +250,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 				</div>
 			</div>
 		</section> -->
-		<section id="content-detail" class="dark form">
+		<!-- <section id="content-detail" class="dark form">
 			<div class="row">
 				<div class="col-12">
 					<h2>Send me an email</h2>
@@ -275,8 +275,64 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 					</form>
 				</div>
 			</div>
+		</section> -->
+		<section id="content-detail" class="dark form">
+			<div class="row">
+				<div class="col-12">
+					<h2>Send me an email</h2>
+				</div>
+				<div class="col-6">
+					<form id="contactForm">
+						<p>
+							Name:
+							<input type="text" name="your-name" required />
+						</p>
+						<p>
+							Email:
+							<input type="email" name="your-email" required />
+						</p>
+						<p>
+							Message:
+							<textarea name="your-message" rows="10" required></textarea>
+						</p>
+						<p>
+							<input type="submit" value="Send email" />
+						</p>
+					</form>
+					<div id="responseMessage" style="display: none; color: green;"></div>
+				</div>
+			</div>
 		</section>
 		
+		<script>
+			document.getElementById('contactForm').addEventListener('submit', function(event) {
+				event.preventDefault(); // Prevent the default form submission
+		
+				var formData = new FormData(this);
+		
+				fetch('https://<your-app-on-render>.onrender.com/submit', {
+					method: 'POST',
+					body: formData
+				})
+				.then(response => response.json())
+				.then(data => {
+					if (data.status === 'success') {
+						document.getElementById('responseMessage').style.display = 'block';
+						document.getElementById('responseMessage').textContent = 'Your message has been sent!';
+						document.getElementById('contactForm').reset(); // Clear the form
+					} else {
+						document.getElementById('responseMessage').style.display = 'block';
+						document.getElementById('responseMessage').textContent = 'There was an error sending your message.';
+					}
+				})
+				.catch(error => {
+					document.getElementById('responseMessage').style.display = 'block';
+					document.getElementById('responseMessage').textContent = 'There was an error sending your message.';
+				});
+			});
+		</script>
+		
+
 	</div><!-- / content -->
 
 
