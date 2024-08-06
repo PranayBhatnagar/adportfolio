@@ -1,11 +1,3 @@
-/*   
-Theme Name: Adham Dannaway
-Theme URI: https://www.adhamdannaway.com/
-Description: Handcrafted portfolio website of Adham Dannaway.
-Author: Adham Dannaway
-Author URI: https://www.adhamdannaway.com/
-*/
-/* Reset =================================================== */
 html,
 body,
 body div,
@@ -119,7 +111,10 @@ section:after,
   justify-content: space-evenly;
 }
 .logogap{
-  margin: 0;
+  margin: 0 0.5rem;
+}
+.mainnav{
+  justify-content: space-evenly;
 }
 .clearfix:after,
 section:after,
