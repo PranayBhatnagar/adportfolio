@@ -109,6 +109,18 @@ section:after,
   content: "";
 }
 
+.anotherrow{
+  display: flex;
+  justify-content: space-between;
+
+}
+.otherrow{
+  display: flex;
+  justify-content: space-evenly;
+}
+.logogap{
+  margin: 0;
+}
 .clearfix:after,
 section:after,
 .row:after {
@@ -314,6 +326,13 @@ header nav li a {
   float: left;
 }
 
+.logomain{
+  height: 62px;
+  width: 75px;
+  background: url(../../selfassets/log.png);
+  display: block;
+}
+
 .logo:hover {
   opacity: 0.5;
 }
@@ -358,6 +377,10 @@ header nav li a {
 }
 
 .social .twitter a {
+  background-position: -32px -186px;
+}
+
+.leetcodelogo a {
   background-position: -32px -186px;
 }
 
